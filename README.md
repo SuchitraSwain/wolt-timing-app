@@ -1,4 +1,5 @@
 # Getting Started with Wolt Time App
+![image](https://user-images.githubusercontent.com/25793195/230790917-f3d80744-fee6-4003-9e15-ea1be93ae686.png)
 
 ## How to start the project
 
