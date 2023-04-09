@@ -1,0 +1,29 @@
+.header__hr {
+  border: 1px solid var(--black--color);
+  opacity: 0.5;
+}
+
+.darkMode__section .card {
+  background-color: white;
+  border: 1px solid rgba(32, 33, 37, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 2px 5px 0 rgba(32, 33, 37, 0.08);
+  padding: 0px 20px;
+}
+
+.darkMode__section .list__border {
+  border: 1px solid var(--gray--color);
+}
+.hours__card {
+  background: var(--black--color) !important;
+  background-image: url("../assets/bg.png") !important;
+  background-repeat: repeat;
+  background-position: center !important;
+  color: white;
+  background-size: contain !important;
+  border-radius: 0 !important;
+}
+
+h1 span {
+  color: var(--green-color);
+}
