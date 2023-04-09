@@ -17,6 +17,9 @@
        a) Dark Mode Component
        b) Light Mode Component
 
+## Third Party Library
+1) Moment.js
+2) Boostrap
 
 
 I have invest some of my time to showcase my design and FE skill in Dark Mode Component
