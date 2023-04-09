@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
 import clock from "../../assets/darkClock.png";
 import "../List.css";
 import { getAmPmHours } from "../../helper/helpers";
 import TimeList from "./TimeList";
-import { Day, weekDays } from "../../models/commonModels";
+import { weekDays } from "../../models/commonModels";
 
 const OpeningHours = ({ data }: any) => {
   const getTiming = () => {
@@ -12,8 +11,8 @@ const OpeningHours = ({ data }: any) => {
     let i = 0;
     while (i < data.length) {
       let timingObj = data[i];
-      let openHours = "";
-      let closeHours = "";
+      let openHours = Number;
+      let closeHours = Number;
       let openDay = "";
       if (timingObj.type === "open") {
         openDay = weekDays[timingObj.day];

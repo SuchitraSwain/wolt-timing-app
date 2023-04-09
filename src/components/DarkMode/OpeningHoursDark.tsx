@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
 import "../List.css";
 import { getAmPmHours } from "../../helper/helpers";
-import TimeList from "./TimeListDark";
 import TimeListDark from "./TimeListDark";
 import { weekDays } from "../../models/commonModels";
 
@@ -12,29 +10,29 @@ const OpeningHoursDark = ({ data }: any) => {
     let i = 0;
     while (i < data.length) {
       let timingObj = data[i];
-      let openStr = "";
-      let closeStr = "";
+      let openHours = Number;
+      let closeHours = Number;
       let openDay = "";
       if (timingObj.type === "open") {
         openDay = weekDays[timingObj.day];
         const openHr = timingObj.value;
-        openStr = getAmPmHours(openHr);
+        openHours = getAmPmHours(openHr);
         i++;
       }
       timingObj = data[i];
       if (timingObj.type === "close") {
         const closeHr = timingObj.value;
-        closeStr = getAmPmHours(closeHr);
+        closeHours = getAmPmHours(closeHr);
         i++;
       } else {
-        closeStr = getAmPmHours(36000);
+        closeHours = getAmPmHours(36000);
       }
 
       const dayTiming = results.find((x) => x.day === openDay);
       if (!dayTiming) {
-        results.push({ day: openDay, timing: `${openStr} - ${closeStr}` });
+        results.push({ day: openDay, timing: `${openHours} - ${closeHours}` });
       } else {
-        dayTiming.timing += `, ${openStr} - ${closeStr}`;
+        dayTiming.timing += `, ${openHours} - ${closeHours}`;
       }
     }
 
