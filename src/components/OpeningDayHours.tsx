@@ -1,9 +1,11 @@
-import "../List.css";
-import { getAmPmHours } from "../../helper/helpers";
-import TimeListDark from "./TimeListDark";
-import { weekDays } from "../../models/commonModels";
+import React from "react";
+import { weekDays } from "../models/commonModels";
+import { getAmPmHours } from "../helper/helpers";
+import TimeList from "./LightMode/TimeList";
+import TimeListDark from "./DarkMode/TimeListDark";
+import "./List.css";
 
-const OpeningHoursDark = ({ data }: any) => {
+const OpeningDayHours = ({ data }: any) => {
   const getTiming = () => {
     const results: any[] = [];
     const results2: any[] = [];
@@ -54,26 +56,18 @@ const OpeningHoursDark = ({ data }: any) => {
 
       results2.push(item);
     });
+    console.log(results2);
     return results2;
   };
-
   return (
-    <section className="darkMode__section mt-5">
+    <section>
       <div className="container">
         <div className="row">
-          <div className="col-md-12">
-            <div className="card hours__card p-md-5">
-              <div className="card-body">
-                <div className="row border p-md--3">
-                  <div className="col-md-12">
-                    <h1 className="text-center mt-3 mb-3 fw-bold">
-                      OPENING <span>HOURS</span>
-                    </h1>
-                    <TimeListDark data={getTiming()} />
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="col-md-4">
+            <TimeList data={getTiming()} />
+          </div>
+          <div className="col-md-7">
+            <TimeListDark data={getTiming()} />
           </div>
         </div>
       </div>
@@ -81,4 +75,4 @@ const OpeningHoursDark = ({ data }: any) => {
   );
 };
 
-export default OpeningHoursDark;
+export default OpeningDayHours;

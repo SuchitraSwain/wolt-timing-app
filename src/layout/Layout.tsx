@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import List from "../components/LightMode/OpeningHours";
 import { getData } from "../services/services";
-import OpeningHoursDark from "../components/DarkMode/OpeningHoursDark";
-import OpeningHours from "../components/LightMode/OpeningHours";
 import { Day, weekDays } from "../models/commonModels";
+import OpeningDayHours from "../components/OpeningDayHours";
 
 const Layout = () => {
   const [data, setData] = useState<any[]>([]);
@@ -26,20 +24,7 @@ const Layout = () => {
     return timeList;
   };
 
-  return (
-    <section>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-4">
-            <OpeningHours data={getArray()} />
-          </div>
-          <div className="col-md-7">
-            <OpeningHoursDark data={getArray()} />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+  return <OpeningDayHours data={getArray()} />;
 };
 
 export default Layout;
